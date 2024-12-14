@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      text-align: center;
+      width: 300px;
+    }
+    .container h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .container button:hover {
+      background-color: #0056b3;
+    }
+    .container a {
+      display: block;
+      margin-top: 10px;
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registro</h1>
+    <input type="text" id="username" placeholder="Usuario" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button onclick="register()">Registrar</button>
+    <a href="login.html">Volver al login</a>
+  </div>
+
+  <script>
+    function register() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Enviar datos al backend
+      window.external.SendRegisterData(username, password);
+    }
+  </script>
+</body>
+</html>
